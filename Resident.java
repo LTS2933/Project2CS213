@@ -12,6 +12,9 @@ public class Resident extends Student {
     public Resident(){
         super();
     }
+    public Resident(Profile profile, Major major, int creditsCompleted){
+        super(profile, major, creditsCompleted);
+    }
     public Resident(int scholarship){
         super();
         this.scholarship = scholarship;
