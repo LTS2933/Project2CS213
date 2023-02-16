@@ -5,6 +5,10 @@ public class TriState extends NonResident {
         super();
         state = null;
     }
+
+    public TriState(Profile profile, Major major, int creditsCompleted){
+        super(profile, major, creditsCompleted);
+    }
     public TriState(String state){
         super();
         this.state = state;
