@@ -7,6 +7,9 @@ public class International extends NonResident {
     public International(){
         super();
     }
+    public International(Profile profile, Major major, int creditsCompleted){
+        super(profile, major, creditsCompleted);
+    }
     public International(boolean isStudyAbroad){
         super();
         this.isStudyAbroad = isStudyAbroad;
