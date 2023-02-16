@@ -10,6 +10,9 @@ public class NonResident extends Student {
     public NonResident(){
         super();
     }
+    public NonResident(Profile profile, Major major, int creditsCompleted){
+        super(profile, major, creditsCompleted);
+    }
 
     @Override
     public double tuitionDue(int creditsEnrolled) {
