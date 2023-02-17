@@ -27,6 +27,8 @@ public class International extends NonResident {
     }
     @Override
     public String toString(){
+        // Christian: should have an option to be (international:study abroad) if the student is study abroad
+        // Christian: but this works if the student is not
         return super.toString() + " (international)";
     }
 
