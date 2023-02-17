@@ -88,7 +88,7 @@ import java.util.StringTokenizer;
                                     int creditsEnrolled = this.enrollment.returnEnrollStudent()[i].getCreditsEnrolled();
                                     double tuition = this.roster.returnRoster()[j].tuitionDue(creditsEnrolled);
                                     DecimalFormat df = new DecimalFormat("#0.00");
-                                    System.out.println(this.enrollment.returnEnrollStudent()[i].toString() + ": tuition due: " + df.format(tuition);
+                                    System.out.println(this.enrollment.returnEnrollStudent()[i].toString() + ": tuition due: " + df.format(tuition));
                                 }
                             }
                         }
