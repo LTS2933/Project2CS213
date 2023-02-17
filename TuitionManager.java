@@ -74,11 +74,21 @@ import java.util.StringTokenizer;
                         this.enrollment.print();
                         break;
                     case "PT":
-                        // display tuition due based on credits
+                        
+                        // boolean exit = false;
                         if (this.enrollment.getSize() == 0){
                             System.out.println("Enrollment is empty!");
+                            // Christian: this returns which means it terminates the function so probably not good
+                            // Christian: should do an if else or a boolean like shown
+                            
+                            // exit = true;
                             return;
                         }
+                        // if (exit == true) break;
+                        
+                        // Christian: did not test the function but it looks good
+                        // Christian: getSize() is a good idea, but returning the entire roster I would avoid you don't have to but I 
+                        // would just add a public method
                         System.out.println("** Tuition due **");
                         for (int i = 0; i < this.enrollment.getSize(); i++){ //iterates through enrollment
                             for(int j = 0; j < this.roster.getSize(); j++){ //iterates through roster
@@ -98,6 +108,8 @@ import java.util.StringTokenizer;
                         break;
                     case "SE":
                         // semester end
+                        
+                        // Christian: keep in mind we need to keep run under 50 lines so we should probably separate it into different functions
                         for (int i = 0; i < this.enrollment.getSize(); i++){ //iterates through enrollment
                             for(int j = 0; j < this.roster.getSize(); j++){ //iterates through roster
                                 Profile enroll =  this.enrollment.returnEnrollStudent()[i].getProfile(); //finds the profile through enrollment
