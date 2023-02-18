@@ -18,7 +18,7 @@ public class TriState extends NonResident {
 
     /**
      * Overloaded constructor that instantiates a new TriState object by calling the
-     * NonResident constructor and taking 3 parameters to do so
+     * NonResident constructor and taking 4 parameters to do so
      * @param state The String representation of the state to use as an instance variable for the object
      * @param profile The Profile object to use as an instance variable for the object
      * @param major The Major enum to use as an instance variable for the object
