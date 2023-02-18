@@ -1,5 +1,5 @@
 /**
- * This class, NonResident extends Student as a subclass. Contains methods for
+ * This class, NonResident, extends Student as a subclass. Contains methods for
  * checking what tuition should be due for the Student depending on credits enrolled
  * and the toString() method.
  * @author Christian Osma, Liam Smith
