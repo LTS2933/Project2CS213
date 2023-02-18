@@ -1,14 +1,30 @@
-public class NonResident extends Student {
+package src;
 
+public class NonResident extends Student {
+    
     private static final int  tuitionNonResident = 33005;
     private static final int fullCredits = 16;
 
     private static final int minCredits = 12;
     private static final int partTimeNonResRate = 966;
-
     private static final double univFeePartTime = 2614.4;
+
     public NonResident(){
         super();
+    }
+
+    public NonResident(Profile profile, Major major, int creditsCompleted){
+        super(profile, major, creditsCompleted);
+    }
+
+    @Override
+    public boolean isResident(){
+        return false;
+    }
+
+    @Override
+    public String toString(){
+        return super.toString() + "(non-resident)";
     }
 
     @Override
@@ -17,14 +33,4 @@ public class NonResident extends Student {
         if (creditsEnrolled > fullCredits) return (partTimeNonResRate * (creditsEnrolled - fullCredits) + tuitionNonResident);
         return tuitionNonResident;
     }
-
-    @Override
-    public boolean isResident() {
-        return false;
-    }
-    @Override
-    public String toString(){
-        return super.toString() + " (non-resident)";
-    }
-
 }
