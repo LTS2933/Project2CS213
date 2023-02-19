@@ -23,6 +23,7 @@ public class TriState extends NonResident {
 
     @Override
     public double tuitionDue(int creditsEnrolled) {
-        return super.tuitionDue(creditsEnrolled) - (state.equals("NY") ? 4000 : 5000);
+        if (creditsEnrolled >= 12) return super.tuitionDue(creditsEnrolled) - (state.toLowerCase().equals("ny") ? 4000 : 5000);
+        return super.tuitionDue(creditsEnrolled);
     }
 }
