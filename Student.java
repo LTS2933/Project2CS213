@@ -10,6 +10,12 @@ public abstract class Student implements Comparable<Student>{
     private Profile profile;
     private Major major;
     private int creditsCompleted;
+    
+    private static final int FRESHMAN = 30;
+    private static final int SOPHOMORE = 60;
+    private static final int JUNIOR = 90;
+    private static final int VALID_MIN_CREDITS = 3;
+    private static final int VALID_MAX_CREDITS = 24;
 
     /**
      Default constructor. Takes no arguments and instantiates a new Student object. Calls the Default
@@ -95,9 +101,9 @@ public abstract class Student implements Comparable<Student>{
         str =  str + " " + major.toString() + " ";
         str = str + "credits completed: " + creditsCompleted;
         String year = "Senior";
-        if (this.creditsCompleted < 30) year = "Freshman";
-        else if (this.creditsCompleted < 60) year = "Sophomore";
-        else if (this.creditsCompleted < 90) year = "Junior";
+        if (this.creditsCompleted < FRESHMAN) year = "Freshman";
+        else if (this.creditsCompleted < SOPHOMORE) year = "Sophomore";
+        else if (this.creditsCompleted < JUNIOR) year = "Junior";
         str += " (" + year + ")";
         return str;
     }
@@ -134,7 +140,7 @@ public abstract class Student implements Comparable<Student>{
      * @return true if the credits enrolled is valid, false if it's not
      */
     public boolean isValid(int creditEnrolled){
-        return (creditEnrolled >=3 && creditEnrolled <= 24);
+        return (creditEnrolled >= VALID_MIN_CREDITS && creditEnrolled <= VALID_MAX_CREDITS);
     }
 
     /**
