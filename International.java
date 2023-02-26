@@ -2,6 +2,8 @@ package src;
 
 public class International extends NonResident{
     private static final int healthInsuranceFee = 2650;
+    private static final int PART_TIME_CREDITS = 12;
+    private static final int TUITION = 5918;
 
     private boolean isStudyAbroad;
 
@@ -36,8 +38,8 @@ public class International extends NonResident{
 
     @Override
     public boolean isValid(int creditEnrolled){
-        if (this.isStudyAbroad == true && creditEnrolled > 12) return false;
-        if (this.isStudyAbroad == false && creditEnrolled < 12) return false;
+        if (this.isStudyAbroad == true && creditEnrolled > PART_TIME_CREDITS) return false;
+        if (this.isStudyAbroad == false && creditEnrolled < PART_TIME_CREDITS) return false;
 
         return true;
     }
@@ -46,7 +48,7 @@ public class International extends NonResident{
     public double tuitionDue(int creditsEnrolled){
         double tuition = 0;
         if (this.getIsStudyAbroad()) {
-            tuition = 5918;
+            tuition = TUITION;
         }
         else {
             tuition = super.tuitionDue(creditsEnrolled) + healthInsuranceFee;
