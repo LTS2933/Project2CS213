@@ -2,6 +2,10 @@ package src;
 
 public class TriState extends NonResident { 
     private String state;
+    
+    private static final int VALID_CREDITS = 12;
+    private static final int NY_TUITION = 4000;
+    private static final int CT_TUITION = 5000;
 
     public TriState(String state, Profile profile, Major major, int creditsCompleted){
         super(profile, major, creditsCompleted);
@@ -23,7 +27,7 @@ public class TriState extends NonResident {
 
     @Override
     public double tuitionDue(int creditsEnrolled) {
-        if (creditsEnrolled >= 12) return super.tuitionDue(creditsEnrolled) - (state.toLowerCase().equals("ny") ? 4000 : 5000);
+        if (creditsEnrolled >= VALID_CREDITS) return super.tuitionDue(creditsEnrolled) - (state.toLowerCase().equals("ny") ? NY_TUITION : CT_TUITION);
         return super.tuitionDue(creditsEnrolled);
     }
 }
