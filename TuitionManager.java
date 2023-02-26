@@ -23,6 +23,8 @@ public class TuitionManager {
     private static final int MIN_SCHOLARSHIP = 1;
     private static final int MAX_SCHOLARSHIP = 10000;
     private static final int ERROR_CREDITS = -404;
+    private static final int TOTAL_CREDITS = 120;
+    private static final int VALID_AGE = 16;
 
     private Scanner sc;
     private Enrollment enrollment;
@@ -95,7 +97,7 @@ public class TuitionManager {
                 if(enroll.equals(roster)) {
                     int creditsEnrolled = this.enrollment.returnEnrollStudent()[i].getCreditsEnrolled();
                     int creditsCompleted = this.roster.returnRoster()[j].getCredits();
-                    if (creditsCompleted + creditsEnrolled >= 120){
+                    if (creditsCompleted + creditsEnrolled >= TOTAL_CREDITS){
                         this.roster.returnRoster()[j].setCreditCompleted(creditsCompleted + creditsEnrolled);
                         array[index] = this.roster.returnRoster()[j];
                         index++;
@@ -529,7 +531,7 @@ public class TuitionManager {
             System.out.println("DOB invalid: " + stringDate + " is today or in the future!");
             return false;
         }
-        if (date.getAge() < 16){
+        if (date.getAge() < VALID_AGE){
             System.out.println("DOB invalid: " + stringDate + " younger than 16 years old.");
             return false;
         }
