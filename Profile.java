@@ -10,6 +10,11 @@ public class Profile implements Comparable<Profile>{
     private String lname;
     private String fname;
     private Date dob;
+    
+    private static final int COMPARE_TO_LESS_THAN = -1;
+    private static final int COMPARE_TO_GREATER_THAN = 1;
+    private static final int COMPARE_TO_EQUAL = 0;
+    
 
     /**
      Default constructor. Instantiates a new Profile object with fname = "Jane", lname = "Doe" and a new Date object
@@ -81,17 +86,17 @@ public class Profile implements Comparable<Profile>{
     @Override
     public int compareTo(Profile pr) {
         int lastNameCompare = this.lname.compareTo(pr.lname);
-        if (lastNameCompare < 0) return -1;
+        if (lastNameCompare < 0) return COMPARE_TO_LESS_THAN;
 
         int firstNameCompare = this.fname.compareTo(pr.fname);
-        if (lastNameCompare == 0 && firstNameCompare < 0 ) return -1;
+        if (lastNameCompare == 0 && firstNameCompare < 0 ) return COMPARE_TO_LESS_THAN;
 
         int dateCompare = this.dob.compareTo(pr.dob);
-        if (lastNameCompare == 0 && firstNameCompare == 0 && dateCompare < 0) return -1;
+        if (lastNameCompare == 0 && firstNameCompare == 0 && dateCompare < 0) return COMPARE_TO_LESS_THAN;
 
-        if (lastNameCompare + firstNameCompare + dateCompare == 0) return 0;
+        if (lastNameCompare + firstNameCompare + dateCompare == 0) return COMPARE_TO_EQUAL;
 
-        return 1;
+        return COMPARE_TO_GREATER_THAN;
     }
 
 }
