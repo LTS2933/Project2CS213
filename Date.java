@@ -18,6 +18,9 @@ public class Date implements Comparable<Date>{
     public static final int SMALLEST_MONTH_INDEX = 1; // constant
     public static final int SMALLEST_DAY_INDEX = 1; // constant
     public static final int LOWEST_VALID_YEAR = 1900; // constant
+    public static final int COMPARE_TO_LESS_THAN = -1;
+    public static final int COMPARE_TO_GREATER_THAN = 1;
+    public static final int COMPARE_TO_EQUAL = 0;
 
     private int year;
     private int month;
@@ -97,12 +100,12 @@ public class Date implements Comparable<Date>{
      */
     @Override
     public int compareTo(Date obj){
-        if (this.year == obj.year && this.day == obj.day && this.month == obj.month) return 0;
-        if (this.year < obj.year) return -1;
-        if (this.year <= obj.year && this.month < obj.month) return -1;
-        if (this.year <= obj.year && this.month <= obj.month && this.day < obj.day ) return -1;
+        if (this.year == obj.year && this.day == obj.day && this.month == obj.month) return COMPARE_TO_EQUAL;
+        if (this.year < obj.year) return COMPARE_TO_LESS_THAN;
+        if (this.year <= obj.year && this.month < obj.month) return COMPARE_TO_LESS_THAN;
+        if (this.year <= obj.year && this.month <= obj.month && this.day < obj.day ) return COMPARE_TO_LESS_THAN;
 
-        return 1;
+        return COMPARE_TO_GREATER_THAN;
     }
 
     /**
