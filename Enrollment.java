@@ -8,12 +8,15 @@ package src;
 public class Enrollment { 
     private EnrollStudent[] students;
     private int size;
+    
+    public static final int LIST_SIZE = 4;
+    public static final int PART_TIME_CREDITS = 12;
 
     /**
      * Initializes a new Enrollment class with a current size of 0 and list size of 4.
      */
     public Enrollment(){
-        this.students = new EnrollStudent[4];
+        this.students = new EnrollStudent[LIST_SIZE];
         this.size = 0;
     }
 
@@ -141,7 +144,7 @@ public class Enrollment {
      */
     public boolean isPartTime(EnrollStudent enrollStudent){
         int indexOfStudent = find(enrollStudent);
-        if (this.students[indexOfStudent].getCreditsEnrolled() < 12) return true;
+        if (this.students[indexOfStudent].getCreditsEnrolled() < PART_TIME_CREDITS) return true;
         return false;
     }
 
