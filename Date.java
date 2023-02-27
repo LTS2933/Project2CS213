@@ -18,9 +18,22 @@ public class Date implements Comparable<Date>{
     public static final int SMALLEST_MONTH_INDEX = 1; // constant
     public static final int SMALLEST_DAY_INDEX = 1; // constant
     public static final int LOWEST_VALID_YEAR = 1900; // constant
-    public static final int COMPARE_TO_LESS_THAN = -1;
-    public static final int COMPARE_TO_GREATER_THAN = 1;
-    public static final int COMPARE_TO_EQUAL = 0;
+    private static final int COMPARE_TO_LESS_THAN = -1;
+    private static final int COMPARE_TO_GREATER_THAN = 1;
+    private static final int COMPARE_TO_EQUAL = 0;
+    private static final int JANUARY = 1;
+    private static final int FEBRUARY = 2;
+    private static final int MARCH = 3;
+    private static final int APRIL = 4;
+    private static final int MAY = 5;
+    private static final int JUNE = 6;
+    private static final int JULY = 7;
+    private static final int AUGUST = 8;
+    private static final int SEPTEMBER = 9;
+    private static final int OCTOBER = 10;
+    private static final int NOVEMBER = 11;
+    private static final int DECEMBER = 12;
+    
 
     private int year;
     private int month;
@@ -145,13 +158,13 @@ public class Date implements Comparable<Date>{
         if ((this.getDay() > LONGER_DAYS_IN_MONTH) || this.getMonth() > NUM_MONTHS || this.getMonth() < SMALLEST_MONTH_INDEX || this.getDay() < SMALLEST_DAY_INDEX || this.getYear() < LOWEST_VALID_YEAR) {
             return false;
         }
-        if ((this.getMonth() == (Calendar.FEBRUARY+1)) || (this.getMonth() == (Calendar.APRIL +1)) || (this.getMonth() == (Calendar.JUNE +1)) ||
-                (this.getMonth() == (Calendar.SEPTEMBER +1)) || (this.getMonth() == (Calendar.NOVEMBER +1))) {
+        if ((this.getMonth() == (FEBRUARY)) || (this.getMonth() == (APRIL)) || (this.getMonth() == (JUNE)) ||
+                (this.getMonth() == (SEPTEMBER)) || (this.getMonth() == (NOVEMBER))) {
             if (this.getDay() > SMALLER_DAYS_IN_MONTH) {
                 return false;
             }
         }
-        if (this.getMonth() == (Calendar.FEBRUARY+1)) {
+        if (this.getMonth() == (FEBRUARY)) {
             if (this.getDay() > DAYS_IN_FEBRUARY_LEAPYEAR) {
                 return false;
             }
